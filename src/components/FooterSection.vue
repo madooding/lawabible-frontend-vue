@@ -5,7 +5,7 @@
             <li><a>Reports</a></li>
             <li><a>APIs</a></li>
         </ul>
-        <span class="content--footer__copyright--left">
+        <span class="content--footer__copyright">
             Copyright © 2017 lawabible.com
         </span>
     </div>

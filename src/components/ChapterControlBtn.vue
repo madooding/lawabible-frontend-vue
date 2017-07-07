@@ -32,9 +32,9 @@
 
         mounted(){
             $('body').keydown((event) => {
-                if(event.keyCode == 39){
+                if(event.keyCode == 39 && this.nextChapterLink){
                     this.$router.replace(this.nextChapterLink)
-                }else if(event.keyCode == 37){
+                }else if(event.keyCode == 37 && this.previousChapterLink){
                     this.$router.replace(this.previousChapterLink)
                 }
             })

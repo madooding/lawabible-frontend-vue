@@ -1,0 +1,102 @@
+.content--chapter {
+    background: #FFFFFF;
+    box-shadow: 0 3px 2px 0 rgba(218,218,218,0.50);
+    border-radius: 3px;
+    padding: 75px;
+
+    span.header {
+        font-family: 'Browallia-bold';
+        font-size: 38px;
+        text-align: center;
+        line-height: 38px;
+        display: block;
+        padding-bottom: 28px;
+    }
+
+    span.sub-header {
+        font-family: 'Browallia-bold';
+        font-size: 32px;
+        line-height: 36px;
+        display: block;
+        padding-bottom: 30px;
+    }
+
+
+    span.verse {
+        display: inline;
+        font-size: 26px;
+        line-height: 36px;
+        padding-bottom: 36px;
+        span.verse__verse-num {
+            color: $semi-light-grey;
+            font-size: 22px;
+        }
+    }
+
+    span.verse:after {
+        content: ' ';
+    }
+
+    span.verse ~ span.sub-header {
+        padding-top: 42px;
+    }
+
+    span.verse ~ span.paragraph {
+        padding-top: 32px;
+    }
+
+    span.paragraph {
+        font-size: 26px;
+        line-height: 36px;
+        display: block;
+        padding-bottom: 32px;
+        text-indent: 26px;
+    }
+
+    span.references {
+        font-family: 'Browallia-italic';
+        font-size: 24px;
+        line-height: 36px;
+        display: block;
+        margin-top: -36px;
+        padding-bottom: 36px;
+
+    }
+
+    span.italic {
+        font-family: 'Browallia-italic';
+        font-size: 26px;
+        line-height: 36px;
+        text-align: center;
+        display: block;
+        padding-bottom: 32px;
+        text-indent: 26px;
+    }
+}
+
+.content--chapter.loading {
+    min-height: calc(100vh - 119px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1024px){
+    .content--chapter {
+        padding-left: 65px;
+        padding-right: 65px;
+        padding-top: 60px;
+        box-shadow: none;
+    }
+    .content--chapter.loading {
+        min-height: calc(100vh - 159px);
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .content--chapter {
+        padding-top: 50px;
+    }
+
+    
+}

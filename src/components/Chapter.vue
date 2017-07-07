@@ -36,6 +36,10 @@ export default {
     computed:{
         getCurrents(){
             return this.$store.getters.getCurrents
+        },
+
+        getFontSize(){
+            return this.$store.getters.getFontSize
         }
     },
 
@@ -49,11 +53,19 @@ export default {
                         content.content = content.content.replace(re, to_replace)
                     }
                 }
+                this.$nextTick(()=>{
+                    this.adjustFontSize()
+                })
+                
             }
         },
 
         getCurrents(){
             this.fetchChapter()
+        },
+
+        getFontSize(){
+            this.adjustFontSize()
         }
 
     },
@@ -86,6 +98,18 @@ export default {
 
         callModal(data) {
             this.$refs.alertModal.callModal(data)
+        },
+
+        adjustFontSize(){
+            let actualFontSize = (this.getFontSize - 26) / 2
+            $('.verse, .paragraph, .italic').css('font-size', `${26 + actualFontSize * 2}px`)
+            $('.verse, .paragraph, .italic').css('line-height', `${36 + actualFontSize * 2}px`)
+            $('.header').css('font-size', `${38 + actualFontSize * 2}px`)
+            $('.header').css('line-height', `${38 + actualFontSize * 2}px`)
+            $('.sub-header').css('font-size', `${32 + actualFontSize * 2}px`)
+            $('.sub-header').css('line-height', `${36 + actualFontSize * 2}px`)
+            $('.references').css('font-size', `${24 + actualFontSize * 2}px`)
+            $('.references').css('line-height', `${36 + actualFontSize * 2}px`)
         }
     }
 }

@@ -11,13 +11,15 @@ const state = {
         chapter: 1,
         bookName: 'GEN'
     },
-    chapters: 50
+    chapters: 50,
+    fontSize: 26
 }
 
 const getters = {
     getAllBooksInfo: (state) => state.books,
     getCurrents: (state) => state.currents,
-    getChapters: (state) => state.chapters
+    getChapters: (state) => state.chapters,
+    getFontSize: (state) => state.fontSize
 }
 
 const mutations = {
@@ -36,12 +38,20 @@ const mutations = {
                 }
             }
         }
+    },
+
+    setFontSize(state, val){
+        state.fontSize = val
     }
 }
 
 const actions = {
     setCurrents({commit, dispatch}, val){
         commit('setCurrents', val)
+    },
+
+    setFontSize({commit}, val){
+        commit('setFontSize', val)
     }
 }
 
