@@ -55,35 +55,35 @@
                 let book = _.find(books, o => o.bookName == currentBookName)
                 if(book.firstChapter == 0){
                     if(currentChapter < book.chapters - 1){
-                        this.nextChapterLink = `/${currentBookName}/${currentChapter+1}`
+                        this.nextChapterLink = `/${currentBookName}/${currentChapter+1}/`
                     }else{
                         if(book._id < 66){
                             let nextBook =  _.find(books, o => o._id == book._id + 1)
-                            this.nextChapterLink = `/${nextBook.bookName}/1`
+                            this.nextChapterLink = `/${nextBook.bookName}/1/`
                         }else{
                             this.nextChapterLink = null
                         }
                     }
                 }else {
                     if(currentChapter < book.chapters){
-                        this.nextChapterLink = `/${currentBookName}/${currentChapter+1}`
+                        this.nextChapterLink = `/${currentBookName}/${currentChapter+1}/`
                     }else{
                         if(book._id < 66){
                             let nextBook =  _.find(books, o => o._id == book._id + 1)
-                            this.nextChapterLink = `/${nextBook.bookName}/1`
+                            this.nextChapterLink = `/${nextBook.bookName}/1/`
                         }
                     }
                 }
 
                 if(currentChapter > 1){
-                    this.previousChapterLink = `/${currentBookName}/${currentChapter-1}`
+                    this.previousChapterLink = `/${currentBookName}/${currentChapter-1}/`
                 }else{
                     if (book._id > 1) {
                         let previousBook = _.find(books, o => o._id == book._id - 1)
                         if(previousBook.firstChapter == 0){
-                            this.previousChapterLink = `/${previousBook.bookName}/${previousBook.chapters-1}`
+                            this.previousChapterLink = `/${previousBook.bookName}/${previousBook.chapters-1}/`
                         }else{
-                            this.previousChapterLink = `/${previousBook.bookName}/${previousBook.chapters}`
+                            this.previousChapterLink = `/${previousBook.bookName}/${previousBook.chapters}/`
                         }
                     }else{
                         this.previousChapterLink = null

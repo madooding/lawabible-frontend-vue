@@ -75,18 +75,33 @@ div#menu-bar {
             margin:0px auto;
             font-family: "Browallia";
             .column {
-                .text {
-                    font-size: 20px;
+                .dropdown {
+                    padding-top: 6px;
+                    padding-bottom: 6px;
+                    .text {
+                        font-size: 20px;
+                        line-height: normal;
+                    }
+                    input {
+                        padding: 10.179px 31.5px 10.179px 15px !important;
+                    }
+                    .menu {
+                        font-size: 20px;
+                        max-height: 300px;
+                    }
+                    i.dropdown.icon {
+                        padding-top: 12px;
+                    }
                 }
-                input {
-                    padding: 10.179px 31.5px 10.179px 15px !important;
-                }
-                .menu {
-                    font-size: 20px;
-                }
+
+                
             }
-            .column:not(:first-child){
+            .column:first-child {
                 padding-left: 0px;
+                padding-right: 0px;
+            }
+            .column:not(:first-child) {
+                padding-right: 0px;
             }
         }
     }
@@ -95,6 +110,14 @@ div#menu-bar {
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
+}
+
+#bookSelectorColumn.column .text{
+    text-overflow: ellipsis;
+    overflow-x: visible;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: inherit;
 }
 
 div.menuPopup {
@@ -128,6 +151,22 @@ div.menuPopup::before {
 div.menuPopup.hidden {
     display: none;
 
+}
+
+
+
+@media only screen and (max-width: 1024){
+    .menubar__container {
+        .item.dropdown-section {
+            .dropdown-section__container {
+                .column {
+                    .menu {
+                        max-height: calc(100vh - 80px);
+                    }
+                }
+            }
+        }
+    }
 }
 
 

@@ -10,7 +10,12 @@ const router = new Router({
   mode: 'history',
   routes: [
     {
-      path: '/:book/:chapter',
+        path: '/',
+        name: 'root-path',
+        component: Main
+    },
+    {
+      path: '/:book/:chapter/',
       name: 'Book-Chapter',
       component: Main
     }
@@ -20,13 +25,22 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     let redirectLink = '/GEN/1'
+    let chapter = 1
+    let book = 'GEN'
     if (VueCookie.get('book') && VueCookie.get('chapter') && isChapterExist({
         bookName: VueCookie.get('book'),
         chapter: VueCookie.get('chapter')
     })){
-        redirectLink = `/${VueCookie.get('book')}/${VueCookie.get('chapter')}`
+        chapter = VueCookie.get('chapter')
+        book = VueCookie.get('book')
+        redirectLink = `/${book}/${chapter}/`
     }
-    if(to.name == 'Book-Chapter'){
+    if(to.name == 'root-path'){
+        setCurrents({
+            bookName: book,
+            chapter: chapter
+        })
+    } else if(to.name == 'Book-Chapter'){
         let currents = {
             bookName: to.params.book,
             chapter: to.params.chapter

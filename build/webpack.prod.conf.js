@@ -97,11 +97,18 @@ var webpackConfig = merge(baseWebpackConfig, {
     ]),
     // service worker caching
     new SWPrecacheWebpackPlugin({
-      cacheId: 'my-vue-app',
+      cacheId: 'lawabible-1219',
       filename: 'service-worker.js',
-      staticFileGlobs: ['dist/**/*.{js,html,css}'],
+      staticFileGlobs: ['dist/**/*.{js,html,css,ttf,svg}'],
       minify: true,
-      stripPrefix: 'dist/'
+      stripPrefix: 'dist/',
+      mergeStaticsConfig: true,
+      runtimeCaching: [
+        {
+            urlPattern: /^https:\/\/lawabible\.madooding\.com\/api\/.{1,}/,
+            handler: 'networkFirst',
+        }],
+      navigateFallback: '/index.html'
     })
   ]
 })

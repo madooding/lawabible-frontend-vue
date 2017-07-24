@@ -54,11 +54,11 @@ export default {
     mounted(){
         $('.ui.dropdown').dropdown()
         $(this.$refs.bookSelector).on('change', () => {
-            this.$router.replace(`/${$(this.$refs.bookSelector).val()}/1`)
+            this.$router.replace(`/${$(this.$refs.bookSelector).val()}/1/`)
 
         })
         $(this.$refs.chapterSelector).on('change', () => {
-            this.$router.replace(`/${this.currentBookName}/${$(this.$refs.chapterSelector).val()}`)
+            this.$router.replace(`/${this.currentBookName}/${$(this.$refs.chapterSelector).val()}/`)
         })
         $('#adjustTextSizeBtn').on('click', () => {
             this.$refs.textSizeAdjustPopup.toggle()

@@ -72,10 +72,11 @@ export default {
 
     methods: {
         fetchChapter() {
+            const hostname = "https://lawabible.madooding.com"
             this.chapter = null
             this.loading = true
             let book = _.find(this.$store.getters.getAllBooksInfo, o => o.bookName == this.getCurrents.bookName)
-            axios.get(`http://localhost:9000/api/book/${book._id}/${this.getCurrents.chapter}`)
+            axios.get(`${hostname}/api/book/${book._id}/${this.getCurrents.chapter}`)
                 .then(res => {
                     this.chapter = res.data
                     this.loading = false

@@ -97,6 +97,11 @@
     .content--chapter {
         padding-top: 50px;
     }
+}
 
-    
+@media only screen and (max-width: 375px) {
+    .content--chapter {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }

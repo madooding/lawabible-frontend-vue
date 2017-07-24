@@ -52,12 +52,33 @@
         .chapterControlBtnPanel--btn {
             width: 40px;
             height: 40px;
+            img {
+                width: 80%;
+                height: 80%;
+            }
         }
         .chapterControlBtnPanel--btn.left {
             left: 20px;
         }
         .chapterControlBtnPanel--btn.right {
             right: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .chapterControlBtnPanel {
+        .chapterControlBtnPanel--btn {
+            width: 35px;
+            height: 35px;
+
+        }
+        .chapterControlBtnPanel--btn.left {
+            left: 3%;
+        }
+
+        .chapterControlBtnPanel--btn.right {
+            right: 3%;
         }
     }
 }
