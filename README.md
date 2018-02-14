@@ -2,6 +2,9 @@
 
 > front-end for lawabible
 
+## Demo
+[Lawa Bible - พะทัม ลเวือะ](https://lawabible.madooding.com)
+
 ## Build Setup
 
 ``` bash
