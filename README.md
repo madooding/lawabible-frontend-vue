@@ -1,6 +1,6 @@
 # lawabible_frontend
 
-> This is a web application project that I did it in summer 2017. The objective is to learn new web technology such as PWA (Progressive Web App) and to create a useful web for lawa people.
+> This is a web application project that I did it in summer 2017. The objective is to learn new web technology such as PWA (Progressive Web App) and to create a useful web for lawa people. By developing this web app, It made me become a full-stack web developer because, I have had developed both front-end and back-end.
 
 ## Demo
 [Lawa Bible - พะทัม ลเวือะ](https://lawabible.madooding.com)
