@@ -3,7 +3,7 @@
         <div class="menubar__container">
             <div class="ui secondary large menu">
                 <a class="item logo">พะทัม<div class="lawa">ลเวือะ</div><sup class="beta">beta</sup></a>
-                <a class="item logo--icon"><img src="../assets/svg/icon.svg"></a>
+                <a class="item logo--icon"><img src="../assets/svg/icon.svg" alt="lawabible logo"></a>
                 <div class="item dropdown-section">
                     <div class="ui grid dropdown-section__container">
                         <div class="eleven wide column" id="bookSelectorColumn">

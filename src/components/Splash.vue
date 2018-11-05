@@ -9,7 +9,6 @@ export default {
     mounted(){
         let fadeOutDelay = 250;
         let splashTime = 2000;
-
         _.debounce(()=>{
             $('#splash').addClass('fade-out')
         }, splashTime)()

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MenuBar from './components/MenuBar'
+const MenuBar = () => import(/* webpackChunkName: 'menu-bar' */ './components/MenuBar')
 export default {
     components: {
         MenuBar

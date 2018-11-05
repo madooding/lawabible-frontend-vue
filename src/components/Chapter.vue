@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <div class="content" role="main">
         <div class="content--chapter" :class="{ loading: loading }">
             <div class="content--chapter--text" v-if="!loading">
                 <span v-for="each in chapter.contents" :class="each.type" v-html="each.content" v-bind:key="each"></span>
@@ -12,9 +12,12 @@
 </template> 
 
 <script>
+
 import axios from 'axios'
 import Spinner from 'vue-simple-spinner'
-import AlertModal from '../components/AlertModal'
+const AlertModal = () => import (
+    /* webpackChunkName: 'alert-modal' */ '../components/AlertModal'
+)
 import ChapterControlBtn from '../components/ChapterControlBtn'
 
 export default {

@@ -24,7 +24,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
-    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
+    chunkFilename: utils.assetsPath('js/[id].[name].[chunkhash].js')
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
@@ -97,7 +97,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     ]),
     // service worker caching
     new SWPrecacheWebpackPlugin({
-      cacheId: 'lawabible-1219',
+      cacheId: 'lawabible-1225',
       filename: 'service-worker.js',
       staticFileGlobs: ['dist/**/*.{js,html,css,ttf,svg}'],
       minify: true,
@@ -106,7 +106,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       runtimeCaching: [
         {
             urlPattern: /^https:\/\/lawabible\.madooding\.com\/api\/.{1,}/,
-            handler: 'networkFirst',
+            handler: 'fastest',
         }],
       navigateFallback: '/index.html'
     })

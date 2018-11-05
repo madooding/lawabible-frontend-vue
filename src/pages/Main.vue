@@ -1,15 +1,21 @@
 <template>
     <div class="main">
+        <Splash></Splash>
         <Chapter></Chapter>
         <FooterSection></FooterSection>
-        <Splash></Splash>
     </div>
 </template>
 
 <script>
-import Chapter from '@/components/Chapter'
-import FooterSection from '@/components/FooterSection'
-import Splash from '@/components/Splash'
+const Chapter = () => import(
+    /* webpackChunkName: "chapter-content" */  '@/components/Chapter'
+)    
+const FooterSection = () => import(
+    /* webpackChunkName: "footer-section" */ '@/components/FooterSection'
+)
+const Splash = () => import(
+    /* webpackChunkName: "splash" */ '@/components/Splash'
+)
 
 export default {
     components: {
